@@ -10,7 +10,7 @@ class Company extends Model
 {
     use HasFactory, HasUuids;
 
-    protected $table = 'company'; 
+    protected $table = 'company';
 
     public $incrementing = false;
     public $keyType = 'string';
@@ -20,4 +20,13 @@ class Company extends Model
         'cnpj',
         'password'
     ];
+
+    protected $casts = [
+        'password' => 'hashed'
+    ];
+
+    public function employee()
+    {
+        return $this->hasMany(Employee::class);
+    }
 }

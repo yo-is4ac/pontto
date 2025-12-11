@@ -3,10 +3,11 @@
 use Illuminate\Support\Facades\Route;
 
 // Company
+use App\Http\Controllers\Web\Company\RegisterController as CompanyRegisterController;
+
 use App\Services\Company\EmailService as CompanyEmailService;
 use App\Http\Controllers\Company\LoginController as CompanyLoginController;
 use App\Http\Controllers\Company\EmployeeController as CompanyEmployeeController;
-use App\Http\Controllers\Company\RegisterController as CompanyRegisterController;
 use App\Http\Controllers\Company\DashboardController as CompanyDashboardController;
 
 // Employee
@@ -39,7 +40,7 @@ Route::prefix('company')->name('company.')->group(function () {
             Route::post('/email', [CompanyEmailService::class, 'sendCredentialstoEmployee'])->name('send-credential-email');
         });
     });
-}); 
+});
 
 Route::prefix('employee')->name('employee.')->group(function () {
     Route::prefix('login')->name('login.')->group(function () {

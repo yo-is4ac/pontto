@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Company;
+namespace App\Http\Controllers\Web\Company;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Company\RegisterRequest;
